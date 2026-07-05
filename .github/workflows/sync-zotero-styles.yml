@@ -1,0 +1,69 @@
+name: Sync Zotero Styles
+
+# Mirrors every .csl citation style from the source repository into this repo's
+# Zotero/ folder and commits any changes. Runs entirely on GitHub — no local setup.
+
+on:
+  schedule:
+    - cron: '0 4 * * *'        # daily at 04:00 UTC
+  workflow_dispatch:            # manual "Run workflow" button
+  repository_dispatch:          # allow the source repo to trigger a sync
+    types: [sync-zotero-styles]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-zotero-styles
+  cancel-in-progress: false
+
+env:
+  SOURCE_REPO: pan4ratte/zotero-gost-styles
+  SOURCE_REF: main
+  TARGET_DIR: Zotero
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout this repo
+        uses: actions/checkout@v4
+
+      - name: Checkout source styles repo
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ env.SOURCE_REPO }}
+          ref: ${{ env.SOURCE_REF }}
+          path: .styles-src
+
+      - name: Mirror .csl styles into ${{ env.TARGET_DIR }}/
+        run: |
+          set -euo pipefail
+          mkdir -p "$TARGET_DIR"
+
+          # Clear existing styles, then copy fresh — this makes the sync a true
+          # mirror (adds new styles, updates changed ones, drops removed ones).
+          # Only *.csl files are touched; anything else in the folder is left alone.
+          find "$TARGET_DIR" -maxdepth 1 -type f -name '*.csl' -delete
+
+          count=0
+          while IFS= read -r -d '' f; do
+            cp -f "$f" "$TARGET_DIR/$(basename "$f")"
+            count=$((count + 1))
+          done < <(find .styles-src -type f -name '*.csl' -print0)
+
+          echo "Copied $count .csl file(s) from $SOURCE_REPO@$SOURCE_REF."
+
+      - name: Commit and push if changed
+        run: |
+          set -euo pipefail
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add -A "$TARGET_DIR"
+          if git diff --cached --quiet; then
+            echo "No style changes — nothing to commit."
+          else
+            git commit -m "chore: sync Zotero styles from ${SOURCE_REPO}"
+            git push
+          fi
