@@ -4,7 +4,9 @@
 
 Данный репозиторий содержит в себе все файлы, на которые даны ссылки в содержании курса. Исходные лицензии всех файлов, которые не созданы мной, сохранены — см. ниже перечисление всех подобных файлов и ссылки на их авторов.
 
-## Мои плагины для Obsidian
+## Мои разработки
+
+### 1. Плагины для Obsidian
 
 | Плагин              | Установить                                                                  | Исходный код                                                        |
 | ------------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------- |
@@ -13,11 +15,17 @@
 | Regex Quick Actions | [Obsidian Store](https://community.obsidian.md/plugins/regex-quick-actions) | [GitHub](https://github.com/pan4ratte/obsidian-regex-quick-actions) |
 | Publish to Telegram | [Obsidian Store](https://community.obsidian.md/plugins/publish-to-telegram) | [GitHub](https://github.com/pan4ratte/obsidian-publish-to-telegram) |
 
-## Источники файлов, не принадлежащих мне
+
+### 2. Стили цитирования для Zotero
+
+На данный момент в репозитории содержится по крайней мере один стиль цитирования для Zotero, который я разрабатываю — скчать его можно прямо отсюда. Тем не менее, обратите внимание на то, что существует отдельный репозиторий, который я планирую наполнять своими стилями цитирования: https://github.com/pan4ratte/zotero-gost-styles
+
+
+## Источники файлов не моего авторства
 
 | Файл          | Автор                                       | Исходник                                                                                                                   |
 | ------------- | ------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
 | gost2018.csl  | Bibliostyle.ru                              | [Bibliostyle](https://bibliostyle.ru/stil-gost-7-0-100-2018-dlya-mendeley-i-zotero-style-russian-gost-r-7-0-100-2018-csl/) |
-| pagebreak.lua | [retorquere](https://github.com/retorquere) | [GitHub](https://github.com/retorquere/zotero-better-bibtex/blob/master/pandoc/zotero.lua)                                 |
+| pagebreak.lua | retorquere | [GitHub](https://github.com/retorquere/zotero-better-bibtex/blob/master/pandoc/zotero.lua)                                 |
 | zotero.lua    | Jonsson B. P., Krewinkel A.                 | [GitHub](https://github.com/pandoc-ext/pagebreak?tab=readme-ov-file)                                                       |
 
