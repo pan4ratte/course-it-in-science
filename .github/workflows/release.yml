@@ -41,9 +41,16 @@ jobs:
         if: steps.check.outputs.exists == 'false'
         run: |
           awk -v ver="${{ steps.version.outputs.value }}" '
-            /^## \[/ {
+            /^## / {
               if (found) exit
-              if ($0 ~ "\\[" ver "\\]") { found=1; next }
+              line = $0
+              sub(/^## /, "", line)
+              gsub(/[][]/, "", line)
+              sub(/^v/, "", line)
+              split(line, parts, " - ")
+              head = parts[1]
+              gsub(/^[ \t]+|[ \t]+$/, "", head)
+              if (head == ver) { found=1; next }
               next
             }
             found { print }
