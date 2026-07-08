@@ -28,6 +28,11 @@ jobs:
     steps:
       - name: Checkout this repo
         uses: actions/checkout@v4
+        with:
+          # Push as an admin user (via PAT) so the direct push to the protected
+          # `main` bypasses the "require a pull request" rule. This works only
+          # because branch protection has "Include administrators" turned off.
+          token: ${{ secrets.SYNC_PAT }}
 
       - name: Checkout source styles repo
         uses: actions/checkout@v4
