@@ -14,9 +14,19 @@
 | Tags Color Files    | [Obsidian Store](https://community.obsidian.md/plugins/tags-color-files)    | [GitHub](https://github.com/pan4ratte/obsidian-tags-color-files)    |
 | Regex Quick Actions | [Obsidian Store](https://community.obsidian.md/plugins/regex-quick-actions) | [GitHub](https://github.com/pan4ratte/obsidian-regex-quick-actions) |
 | Publish to Telegram | [Obsidian Store](https://community.obsidian.md/plugins/publish-to-telegram) | [GitHub](https://github.com/pan4ratte/obsidian-publish-to-telegram) |
+| Classy PDF Extractor | [Obsidian Store](https://community.obsidian.md/plugins/classy-pdf-extractor) | [GitHub](https://github.com/pan4ratte/obsidian-classy-pdf-extractor) |
 
+### 2. Lua-фильтры для Pandoc
 
-### 2. Стили цитирования для Zotero
+| Фильтр | Назначение |
+| :----- | :--------- |
+| [figures.lua](https://github.com/pan4ratte/course-it-in-science/blob/main/Obsidian/Pandoc/filters/figures.lua) | Автоматически назначает изображениям, встроенным в заметки в Obsidian, корректный стиль Word. |
+| [list-styles.lua](https://github.com/pan4ratte/course-it-in-science/blob/main/Obsidian/Pandoc/filters/list-styles.lua) | Исправляет проблему Pandoc, из-за которой нумерованные и маркированные списки не получают корректный стиль Word. |
+| [list-styles-old.lua](https://github.com/pan4ratte/course-it-in-science/blob/main/Obsidian/Pandoc/filters/list-styles-old.lua) | Старая версия предыдущего фильтра, работающая иначе и не так стабильно. В будущем скорее всего будет удалён. |
+| [today-date.lua](https://github.com/pan4ratte/course-it-in-science/blob/main/Obsidian/Pandoc/filters/today-date.lua) | Позволяет поместить в любое место заметки `$today` и после конвертации получить сегодняшнюю дату в формате `12 December 2026`. |
+| [today-date-ru.lua](https://github.com/pan4ratte/course-it-in-science/blob/main/Obsidian/Pandoc/filters/today-date-ru.lua) | Позволяет поместить в любое место заметки `$today` и после конвертации получить сегодняшнюю дату в формате `12 Декабря 2026`. |
+
+### 3. Стили цитирования для Zotero
 
 На данный момент в репозитории содержится по крайней мере один стиль цитирования для Zotero, который я разрабатываю — скчать его можно прямо отсюда. Тем не менее, обратите внимание на то, что существует отдельный репозиторий, который я планирую наполнять своими стилями цитирования: https://github.com/pan4ratte/zotero-gost-styles
 
