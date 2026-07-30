@@ -8,13 +8,13 @@
 
 ### 1. Плагины для Obsidian
 
-| Плагин              | Установить                                                                  | Исходный код                                                        |
-| ------------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| Advanced Word Count | [Obsidian Store](https://community.obsidian.md/plugins/advanced-word-count) | [GitHub](https://github.com/pan4ratte/obsidian-advanced-word-count) |
-| Tags Color Files    | [Obsidian Store](https://community.obsidian.md/plugins/tags-color-files)    | [GitHub](https://github.com/pan4ratte/obsidian-tags-color-files)    |
-| Regex Quick Actions | [Obsidian Store](https://community.obsidian.md/plugins/regex-quick-actions) | [GitHub](https://github.com/pan4ratte/obsidian-regex-quick-actions) |
-| Publish to Telegram | [Obsidian Store](https://community.obsidian.md/plugins/publish-to-telegram) | [GitHub](https://github.com/pan4ratte/obsidian-publish-to-telegram) |
-| Classy PDF Extractor | [Obsidian Store](https://community.obsidian.md/plugins/classy-pdf-extractor) | [GitHub](https://github.com/pan4ratte/obsidian-classy-pdf-extractor) |
+| Плагин              | Краткое описание | Установить                                                                  | Исходный код                                                        |
+| ------------------- | :------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| Advanced Word Count | Создание сложных и детальных счётчиков слов с пресетами, отображением с троке состояния, в боковой панели и много другого. | [Obsidian Store](https://community.obsidian.md/plugins/advanced-word-count) | [GitHub](https://github.com/pan4ratte/obsidian-advanced-word-count) |
+| Tags Color Files    | Окрашивает файлы в проводнике в зависимости от тегов внутри них, согласно созданным правилам. Очень гибкие настройки отображения и фильтрации. | [Obsidian Store](https://community.obsidian.md/plugins/tags-color-files)    | [GitHub](https://github.com/pan4ratte/obsidian-tags-color-files)    |
+| Regex Quick Actions | Позволяет создать библиотеку команд регулярных выражений и быстро применять их к заметкам и папкам разными способами. | [Obsidian Store](https://community.obsidian.md/plugins/regex-quick-actions) | [GitHub](https://github.com/pan4ratte/obsidian-regex-quick-actions) |
+| Publish to Telegram | Публикация (и редактирование) заметок прямо в Telegram в любые чаты от лица бота или аккаунта, как с классическим, так и с Rich Text форматированием. | [Obsidian Store](https://community.obsidian.md/plugins/publish-to-telegram) | [GitHub](https://github.com/pan4ratte/obsidian-publish-to-telegram) |
+| Classy PDF Extractor | Извлечение всех видов аннотаций из файлов с гибкими шаблонами оформления и гибкими настроками группировки, распределения и извлечения заметок. | [Obsidian Store](https://community.obsidian.md/plugins/classy-pdf-extractor) | [GitHub](https://github.com/pan4ratte/obsidian-classy-pdf-extractor) |
 
 ### 2. Lua-фильтры для Pandoc
 
