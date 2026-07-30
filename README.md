@@ -18,13 +18,17 @@
 
 ### 2. Lua-фильтры для Pandoc
 
-| Фильтр | Назначение |
-| :----- | :--------- |
-| [figures.lua](https://github.com/pan4ratte/course-it-in-science/blob/main/Obsidian/Pandoc/filters/figures.lua) | Автоматически назначает изображениям, встроенным в заметки в Obsidian, корректный стиль Word. |
-| [list-styles.lua](https://github.com/pan4ratte/course-it-in-science/blob/main/Obsidian/Pandoc/filters/list-styles.lua) | Исправляет проблему Pandoc, из-за которой нумерованные и маркированные списки не получают корректный стиль Word. |
-| [list-styles-old.lua](https://github.com/pan4ratte/course-it-in-science/blob/main/Obsidian/Pandoc/filters/list-styles-old.lua) | Старая версия предыдущего фильтра, работающая иначе и не так стабильно. В будущем скорее всего будет удалён. |
-| [today-date.lua](https://github.com/pan4ratte/course-it-in-science/blob/main/Obsidian/Pandoc/filters/today-date.lua) | Позволяет поместить в любое место заметки `$today` и после конвертации получить сегодняшнюю дату в формате `12 December 2026`. |
-| [today-date-ru.lua](https://github.com/pan4ratte/course-it-in-science/blob/main/Obsidian/Pandoc/filters/today-date-ru.lua) | Позволяет поместить в любое место заметки `$today` и после конвертации получить сегодняшнюю дату в формате `12 Декабря 2026`. |
+Все фильтры подключаются к Pandoc через `--lua-filter=имя-фильтра.lua`, а фильтры, которые работают со стилями Word, требуют ещё и референсного файла (шаблона оформления): `--reference-doc=reference-gost-14.docx`. Нужные стили должны существовать в этом файле, причём совпадать должны именно *названия* стилей, а не их идентификаторы.
+
+| Фильтр | Назначение | Что нужно для работы |
+| :----- | :--------- | :------------------- |
+| [figures.lua](https://github.com/pan4ratte/course-it-in-science/blob/main/Obsidian/Pandoc/filters/figures.lua) | Назначает изображениям *без* подписи, встроенным в заметки в Obsidian, корректный стиль Word. | Стиль абзаца `Figure` в референсном файле (создаётся автоматически при генерации файла). |
+| [list-styles.lua](https://github.com/pan4ratte/course-it-in-science/blob/main/Obsidian/Pandoc/filters/list-styles.lua) | Исправляет проблему Pandoc, из-за которой нумерованные и маркированные списки не получают корректный стиль Word. | Стили абзаца `List Bullet` и `List Number` с уровнями до 6 включительно (`List Bullet 2`, `List Bullet 3` и т.д.). В Word такие стили уже встроены, просто обновите их оформление под свои нужды. |
+| [table-styles.lua](https://github.com/pan4ratte/course-it-in-science/blob/main/Obsidian/Pandoc/filters/table-styles.lua) | Исправляет проблему, из-за которой Pandoc принудительно назначает тексту в таблицах стиль `Compact`, перебивая тем самым оформление стиля таблицы. | Стиль абзаца `Table Text` в референсном файле (если название другое — укажите `table-text-style` в метаданных при экспорте). В этом стиле не нужно задавать шрифт, размер и полужирность: они должны остаться за стилем таблицы, а сам стиль абзаца стоит использовать только для отступов, интервалов и выравнивания. Ячейки шапки по умолчанию получают тот же стиль; чтобы оформить их отдельно, укажите название стиля в `table-head-style`. |
+| [table-verbatim.lua](https://github.com/pan4ratte/course-it-in-science/blob/main/Obsidian/Pandoc/filters/table-verbatim.lua) | Позволяет использовать стиль формления `кода` внутри таблиц: Pandoc жёстко назначает такому тексту стиль `VerbatimChar`, из-за чего размер кода в ячейках не подстроить под таблицу. | Стиль `Table Verbatim` в референсном файле, причём обязательно **знаковый** (символьный), а не стиль абзаца — иначе он не может применяться к фрагменту текста и будет проигнорирован. Другое название задаётся через `table-verbatim-style`. |
+| [table-spacing.lua](https://github.com/pan4ratte/course-it-in-science/blob/main/Obsidian/Pandoc/filters/table-spacing.lua) | Добавляет отступы 12 пт до и после таблиц, так как в Word отступы у таблиц не настраиваются вообще. | Специальных требований нет. |
+| [today-date.lua](https://github.com/pan4ratte/course-it-in-science/blob/main/Obsidian/Pandoc/filters/today-date.lua) | Позволяет поместить в любое место заметки `$today` и после конвертации получить сегодняшнюю дату в формате `December 12, 2026`. | Специальных требований нет. |
+| [today-date-ru.lua](https://github.com/pan4ratte/course-it-in-science/blob/main/Obsidian/Pandoc/filters/today-date-ru.lua) | Позволяет поместить в любое место заметки `$today` и после конвертации получить сегодняшнюю дату в формате `12 декабря 2026 г.`. | Специальных требований нет. |
 
 ### 3. Стили цитирования для Zotero
 
