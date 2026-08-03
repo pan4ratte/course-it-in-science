@@ -29,6 +29,7 @@
 | [table-spacing.lua](https://github.com/pan4ratte/course-it-in-science/blob/main/Obsidian/Pandoc/filters/table-spacing.lua) | Добавляет отступы 12 пт до и после таблиц, так как в Word отступы у таблиц не настраиваются вообще. | Специальных требований нет. |
 | [today-date.lua](https://github.com/pan4ratte/course-it-in-science/blob/main/Obsidian/Pandoc/filters/today-date.lua) | Позволяет поместить в любое место заметки `$today` и после конвертации получить сегодняшнюю дату в формате `December 12, 2026`. | Специальных требований нет. |
 | [today-date-ru.lua](https://github.com/pan4ratte/course-it-in-science/blob/main/Obsidian/Pandoc/filters/today-date-ru.lua) | Позволяет поместить в любое место заметки `$today` и после конвертации получить сегодняшнюю дату в формате `12 декабря 2026 г.`. | Специальных требований нет. |
+| [keywords.lua](https://github.com/pan4ratte/course-it-in-science/blob/main/Obsidian/Pandoc/filters/keywords.lua) | Позволяет копировать ключевые слова, заполненные в свойстве `keywords`, в тело документа — они автоматически помещаются сразу после аннотации.  | Специальных требований нет. При этом, по умолчанию выводится заголовок `Keywords:`. Чтобы изменить его, создайте и заполните свойство `keywords-title` любым текстом. |
 
 ### 3. Стили цитирования для Zotero
 
